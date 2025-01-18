@@ -343,6 +343,8 @@
             maletinesDiv.style.display = 'grid';
             document.getElementById('controls').style.display = 'block';
 
+            maletinesInput.sort((a, b) => a.maletin_index - b.maletin_index);
+
             maletinesInput.forEach(({ maletin_index, premio }) => {
                 const maletin = document.createElement('div');
                 let maletinId = maletin_index + 1;
