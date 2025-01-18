@@ -264,6 +264,7 @@
         let customMaletines = [];
 
         function backToMainMenu() {
+            //window.location.reload();
             document.getElementById('mainMenu').hidden = false;
             document.getElementById('mainTitle').hidden = false;
             document.getElementById('config_GameSeed').hidden = true;
@@ -328,7 +329,30 @@
             document.getElementById('config_centerColum').style.display = 'none';
             document.getElementById('config_rightColumn').style.display = 'none';
 
-            generateMaletines();
+            if (loadedMaletins && loadedMaletins.length === 26) {
+
+            } else {
+                generateMaletines();
+            }
+        }
+
+        function generateSavedMaletines(maletinesInput) {
+            clearArray(maletines)
+            const maletinesDiv = document.getElementById('maletines');
+            maletinesDiv.innerHTML = '';
+            maletinesDiv.style.display = 'grid';
+            document.getElementById('controls').style.display = 'block';
+
+            maletinesInput.forEach(({ maletin_index, premio }) => {
+                const maletin = document.createElement('div');
+                let maletinId = maletin_index + 1;
+                maletin.id = `maletin-${maletinId}`
+                maletin.classList.add('maletin', 'closed')
+                maletin.innerHTML = `<span>${maletinId}</span>`;
+                maletin.onclick = () => maletinClicked(maletin_index);
+                maletines.push({ id: maletinId, value: premio });
+                maletinesDiv.appendChild(maletin);
+            });
         }
 
         function startGameSeedConfig() {
@@ -686,6 +710,7 @@
 
     <script>
         async function guardarMaletines() {
+            //const response = await fetch('https://micfortuna.netlify.app/.netlify/functions/saveMaletines', {
             const response = await fetch('/.netlify/functions/saveMaletines', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -707,6 +732,7 @@
             if (!seed) return alert("Seed es requerida para cargar los maletines.");
 
             try {
+                //const response = await fetch(`https://micfortuna.netlify.app/.netlify/functions/getMaletinesBySeed?seed=${seed}`);
                 const response = await fetch(`/.netlify/functions/getMaletinesBySeed?seed=${seed}`);
                 const data = await response.json();
 
