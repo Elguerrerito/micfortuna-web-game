@@ -23,19 +23,19 @@ exports.handler = async (event) => {
             };
         }
 
-        if (Array.isArray(maletines) || maletines.length === 0) {
+        if (Array.isArray(maletines) && maletines.length === 0) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: 'No asisgnaste valores a ningun maletín' }),
             };
         }
 
-        if (Array.isArray(maletines) || maletines.length < 26) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'No asisgnaste valores a todos los maletines' }),
-            };
-        }
+        // if (Array.isArray(maletines) && maletines.length < 26) {
+        //     return {
+        //         statusCode: 400,
+        //         body: JSON.stringify({ error: 'No asisgnaste valores a todos los maletines' }),
+        //     };
+        // }
 
         const seed = Date.now();
         const records = maletines.map(({ maletinIndex, id, value }) => ({
