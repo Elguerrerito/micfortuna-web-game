@@ -1,0 +1,156 @@
+@font-face {
+	font-family: neonfont;
+	src: url("./font/Neoneon-3zaD6.otf");
+}
+
+@font-face {
+	font-family: numberfont;
+	src: url("./font/AUTOMATA.otf");
+}
+
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	justify-content: center;
+	background: url("https://i.imgur.com/kaT3vZ2.jpeg") no-repeat;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+h1 {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: neonfont;
+	color: #f7ef07;
+	grid-column: 2;
+	text-shadow: 0 0 5px #ffffff11, 0 0 8px #ffffff11, 0 0 19px #ffffff11, 0 0 30px #f9f526, 0 0 70px #f9f526, 0 0 80px #f9f526;
+	font-size: 70px;
+}
+
+h2 {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: neonfont;
+	color: #f7ef07;
+	grid-row: 2;
+	text-shadow: 0 0 5px #ffffff11, 0 0 8px #ffffff11, 0 0 19px #ffffff11, 0 0 40px #f9f526, 0 0 80px #f9f526, 0 0 90px #f9f526;
+	font-size: 80px;
+}
+
+h3 {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: neonfont;
+	color: #f7ef07;
+	grid-row: 2;
+	text-shadow: 0 0 5px #ffffff11, 0 0 8px #ffffff11, 0 0 19px #ffffff11;
+	font-size: 35px;
+}
+
+#mainMenu {
+	width: 30%;
+	padding: 60px 10px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #1e1e1e;
+	color: white;
+	font-weight: bold;
+	border-width: 10px;
+	border-radius: 10px;
+	margin: 80px auto;
+}
+
+#config_GameSeed,
+#game {
+	text-align: center;
+	display: hidden;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-gap: 10px;
+}
+
+#config_centerColum,
+#centerColum {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-column: 2;
+	grid-row: 2;
+}
+
+#config_leftColumn,
+#leftColumn {
+	padding-left: 5px;
+	display: grid;
+	grid-template-rows: 1.3fr 2fr;
+	grid-gap: 10px;
+	grid-column: 1;
+	grid-row: 2;
+}
+
+#config_rightColumn,
+#rightColumn {
+	padding-right: 5px;
+	display: grid;
+	grid-template-rows: 1.3fr 2fr;
+	grid-gap: 10px;
+	grid-column: 3;
+	grid-row: 2;
+}
+
+#config_controls,
+#controls {
+	margin: auto;
+	margin-top: 50px;
+	padding: 5px;
+}
+
+.btn {
+	margin: 10px;
+	padding: 10px 20px;
+	background-color: #2a9d8f;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-cancel {
+	margin: 10px;
+	padding: 10px 20px;
+	background-color: #9d2a2a;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.txtinput {
+	padding: 10px 20px;
+	background-color: #cdfff9;
+	width: 80px;
+	border: none;
+	border-radius: 5px;
+}
+
+.btn-txt {
+	margin: 0px;
+	padding: 10px 20px;
+	background-color: #2a9d8f;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.swal-popup {
+	border-radius: 30px;
+}

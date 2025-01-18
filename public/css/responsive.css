@@ -1,0 +1,199 @@
+@media (min-width: 1024px) {
+	body {
+		scale: 80%;
+		margin: auto;
+		position: relative;
+		left: 0%;
+		top: -10%;
+		overflow: hidden;
+	}
+	#config_GameSeed,
+	#game {
+		position: relative;
+		left: -10%;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 0px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 0px;
+	}
+}
+
+@media (min-width: 1280px) {
+	body {
+		scale: 90%;
+		margin: auto;
+		position: relative;
+		left: 0%;
+		top: 0%;
+		overflow: hidden;
+	}
+
+	#config_GameSeed,
+	#game {
+		position: initial;
+		left: initial;
+	}
+
+	#config_GameSeed {
+		position: initial;
+		left: initial;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 5px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 5px;
+	}
+}
+
+@media (min-width: 1360px) {
+	body {
+		scale: 100%;
+		margin: auto;
+		position: relative;
+		left: 0%;
+		top: 0%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 45px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 45px;
+	}
+}
+
+@media (min-width: 1600px) {
+	body {
+		background: url("https://i.imgur.com/kaT3vZ2.jpeg") no-repeat cover;
+		scale: 105%;
+		padding-top: 5%;
+		position: relative;
+		left: 0.5%;
+		bottom: -150%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 85px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 85px;
+	}
+}
+
+@media (min-width: 1920px) and (max-height: 1080px) {
+	body {
+		background: url("https://i.imgur.com/kaT3vZ2.jpeg") no-repeat cover;
+		scale: 130%;
+		padding-top: 9%;
+		position: relative;
+		left: 0.5%;
+		bottom: -150%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 245px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 250px;
+	}
+
+	#mainMenu {
+		width: 25%;
+	}
+}
+
+@media (min-width: 1920px) and (min-height: 1081px) {
+	body {
+		background: url("https://i.imgur.com/kaT3vZ2.jpeg") no-repeat cover;
+		scale: 130%;
+		padding-top: 12%;
+		position: relative;
+		left: 0.5%;
+		bottom: -150%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 245px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 250px;
+	}
+
+	#mainMenu {
+		width: 25%;
+	}
+}
+
+@media (min-width: 2560px) {
+	body {
+		background: url("https://i.imgur.com/kaT3vZ2.jpeg") no-repeat cover;
+		scale: 175%;
+		padding-top: 9%;
+		position: relative;
+		left: 0.5%;
+		bottom: -150%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 595px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 600px;
+	}
+}
+@media (min-width: 3840px) {
+	body {
+		background: url("https://i.imgur.com/kaT3vZ2.jpeg") cover;
+		scale: 275%;
+		padding-top: 9%;
+		position: relative;
+		left: 0.5%;
+		bottom: -150%;
+		overflow: hidden;
+	}
+
+	#config_leftColumn,
+	#leftColumn {
+		padding-left: 1250px;
+	}
+
+	#config_rightColumn,
+	#rightColumn {
+		padding-right: 1270px;
+	}
+
+	#mainMenu {
+		width: 15%;
+	}
+}

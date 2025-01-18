@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micfortuna</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/maletines.css">
+    <link rel="stylesheet" href="css/tablavalores.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="mainTitle">MICFORTUNA</h1>
+
+    <div id="mainMenu">
+        <!-- <p>Introduce el nombre del invitado:</p>
+        <input type="text" id="invitado" placeholder="Invitado"> -->
+        <button class="btn" onclick="startGame()">Iniciar Juego</button>
+        <button class="btn" onclick="startGameSeedConfig()">Confirgurar Maletines</button>
+    </div>
+
+    <div id="game" hidden>
+
+        <div id="leftColumn">
+            <div id="controls" style="display:none;">
+                <div>
+                    <button class="btn" onclick="changeMaletin()">Cambiar Maletín</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="offerFairDeal()">Ofrecer Trato Justo</button>
+                </div>
+                <div id="custom-deal-controls">
+                    <input class="txtinput" type="text" id="customOfferAmount" placeholder="Cantidad" value="0">
+                    <button class="btn-txt" onclick="offerCustomDeal()">Ofrecer</button>
+                </div>
+                <div>
+                    <button class="btn-cancel" onclick="backToMainMenu()">Salir Al Menú</button>
+                </div>
+            </div>
+            <div id="tablavaloresleft">
+                <div class="table-value-class left-side" id="table-value-0.1">
+                    <span id="dolar"> </span><span>0.1</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-6">
+                    <span id="dolar"> </span><span>6</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-0.5">
+                    <span id="dolar"> </span><span>0.5</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-7">
+                    <span id="dolar"> </span><span>7</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-1">
+                    <span id="dolar"> </span><span>1</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-8">
+                    <span id="dolar"> </span><span>8</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-2">
+                    <span id="dolar"> </span><span>2</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-9">
+                    <span id="dolar"> </span><span>9</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-3">
+                    <span id="dolar"> </span><span>3</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-10">
+                    <span id="dolar"> </span><span>10</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-4">
+                    <span id="dolar"> </span><span>4</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-11">
+                    <span id="dolar"> </span><span>11</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-5">
+                    <span id="dolar"> </span><span>5</span>
+                </div>
+                <div class="table-value-class left-side" id="table-value-12">
+                    <span id="dolar"> </span><span>12</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="centerColum">
+            <div id="maletines" style="display:none;"></div>
+            <h2 id="subTitle">MICFORTUNA</h2>
+        </div>
+
+        <div id="rightColumn">
+            <div id="controls2" style="display:none;">
+
+            </div>
+            <div id="tablavaloresright">
+                <div class="table-value-class right-side" id="table-value-13">
+                    <span id="dolar"> </span><span>13</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-25">
+                    <span id="dolar"> </span><span>25</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-14">
+                    <span id="dolar"> </span><span>14</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-30">
+                    <span id="dolar"> </span><span>30</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-15">
+                    <span id="dolar"> </span><span>15</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-40">
+                    <span id="dolar"> </span><span>40</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-16">
+                    <span id="dolar"> </span><span>16</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-50">
+                    <span id="dolar"> </span><span>50</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-18">
+                    <span id="dolar"> </span><span>18</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-75">
+                    <span id="dolar"> </span><span>75</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-20">
+                    <span id="dolar"> </span><span>20</span>
+                </div>
+                <div class="table-value-class right-side" id="table-value-100">
+                    <span id="dolar"> </span><span>100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="config_GameSeed" hidden>
+        <div id="config_leftColumn">
+            <div id="config_controls" style="display:none;">
+                <div>
+                    <button class="btn" onclick="guardarMaletines()">Guardar Semilla</button>
+                </div>
+                <div>
+                    <button class="btn-cancel" onclick="backToMainMenu()">Salir Sin Guardar</button>
+                </div>
+                <div id="config_custom-deal-controls">
+                    <span id="config_seed-span"></span>
+                </div>
+            </div>
+            <div id="config_tablavaloresleft">
+                <div class="table-value-class left-side" id="config_table-value-0.1">
+                    <span id="dolar"> </span><span>0.1</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-6">
+                    <span id="dolar"> </span><span>6</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-0.5">
+                    <span id="dolar"> </span><span>0.5</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-7">
+                    <span id="dolar"> </span><span>7</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-1">
+                    <span id="dolar"> </span><span>1</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-8">
+                    <span id="dolar"> </span><span>8</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-2">
+                    <span id="dolar"> </span><span>2</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-9">
+                    <span id="dolar"> </span><span>9</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-3">
+                    <span id="dolar"> </span><span>3</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-10">
+                    <span id="dolar"> </span><span>10</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-4">
+                    <span id="dolar"> </span><span>4</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-11">
+                    <span id="dolar"> </span><span>11</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-5">
+                    <span id="dolar"> </span><span>5</span>
+                </div>
+                <div class="table-value-class left-side" id="config_table-value-12">
+                    <span id="dolar"> </span><span>12</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="config_centerColum">
+            <div id="config_maletines" style="display:none;"></div>
+            <h2 id="config_subTitle">MICFORTUNA</h2>
+        </div>
+
+        <div id="config_rightColumn">
+            <div id="config_controls2" style="display:none;">
+
+            </div>
+            <div id="config_tablavaloresright">
+                <div class="table-value-class right-side" id="config_table-value-13">
+                    <span id="dolar"> </span><span>13</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-25">
+                    <span id="dolar"> </span><span>25</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-14">
+                    <span id="dolar"> </span><span>14</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-30">
+                    <span id="dolar"> </span><span>30</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-15">
+                    <span id="dolar"> </span><span>15</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-40">
+                    <span id="dolar"> </span><span>40</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-16">
+                    <span id="dolar"> </span><span>16</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-50">
+                    <span id="dolar"> </span><span>50</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-18">
+                    <span id="dolar"> </span><span>18</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-75">
+                    <span id="dolar"> </span><span>75</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-20">
+                    <span id="dolar"> </span><span>20</span>
+                </div>
+                <div class="table-value-class right-side" id="config_table-value-100">
+                    <span id="dolar"> </span><span>100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+    <script>
+        var maletines = [];
+        var valores = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 25, 30, 40, 50, 75, 100];
+
+        //let invitado = '';
+
+        let preConfirmedMaletin = null;
+        let selectedMaletin = null;
+        let maletinesLeft = 26;
+
+        let customMaletines = [];
+
+        function backToMainMenu() {
+            document.getElementById('mainMenu').hidden = false;
+            document.getElementById('mainTitle').hidden = false;
+            document.getElementById('config_GameSeed').hidden = true;
+            document.getElementById('config_GameSeed').style.display = "hidden";
+            document.getElementById('game').hidden = true;
+            document.getElementById('game').style.display = "hidden";
+
+            maletines = [];
+            valores = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 25, 30, 40, 50, 75, 100];
+            clearArray(maletines)
+            clearArray(valores)
+
+            preConfirmedMaletin = null;
+            selectedMaletin = null;
+            maletinesLeft = 26;
+
+            customMaletines = [];
+
+            const maletinesDiv = document.getElementById('maletines');
+            maletinesDiv.innerHTML = '';
+            maletinesDiv.style.display = 'none';
+
+            document.getElementById('controls').style.display = 'none';
+
+
+            const config_maletinesDiv = document.getElementById('config_maletines');
+            config_maletinesDiv.innerHTML = '';
+            config_maletinesDiv.style.display = 'none';
+
+            document.getElementById('config_controls').style.display = 'none';
+
+            document.getElementById('subTitle').style.display = 'none';
+            document.getElementById('config_subTitle').style.display = 'none';
+
+
+            document.getElementById('leftColumn').style.display = 'none';
+            document.getElementById('centerColum').style.display = 'none';
+            document.getElementById('rightColumn').style.display = 'none';
+
+            document.getElementById('config_leftColumn').style.display = 'none';
+            document.getElementById('config_centerColum').style.display = 'none';
+            document.getElementById('config_rightColumn').style.display = 'none';
+        }
+
+        function startGame() {
+            /*invitado = document.getElementById('invitado').value;
+            if (!invitado) {
+                Swal.fire(
+                    {
+                        title: 'Error',
+                        text: 'Por favor, introduce el nombre del invitado.',
+                        icon: "error",
+                        backdrop: ` rgba(0,0,0,0)`
+                    }
+                );
+                return;
+            }*/
+
+            document.getElementById('mainMenu').hidden = true;
+            document.getElementById('mainTitle').hidden = true;
+            document.getElementById('config_GameSeed').hidden = true;
+            document.getElementById('config_GameSeed').style.display = "hidden";
+            document.getElementById('game').hidden = false;
+            document.getElementById('game').style.display = "grid";
+
+            document.getElementById('subTitle').style.display = 'initial';
+            document.getElementById('config_subTitle').style.display = 'none';
+
+            document.getElementById('leftColumn').style.display = 'grid';
+            document.getElementById('centerColum').style.display = 'grid';
+            document.getElementById('rightColumn').style.display = 'grid';
+
+            document.getElementById('config_leftColumn').style.display = 'none';
+            document.getElementById('config_centerColum').style.display = 'none';
+            document.getElementById('config_rightColumn').style.display = 'none';
+
+            generateMaletines();
+        }
+
+        function startGameSeedConfig() {
+            document.getElementById('mainMenu').hidden = true;
+            document.getElementById('mainTitle').hidden = true;
+            document.getElementById('config_GameSeed').hidden = false;
+            document.getElementById('config_GameSeed').style.display = "grid";
+            document.getElementById('game').hidden = true;
+            document.getElementById('game').style.display = "hidden";
+
+            document.getElementById('subTitle').style.display = 'none';
+            document.getElementById('config_subTitle').style.display = 'initial';
+
+            document.getElementById('leftColumn').style.display = 'none';
+            document.getElementById('centerColum').style.display = 'none';
+            document.getElementById('rightColumn').style.display = 'none';
+
+            document.getElementById('config_leftColumn').style.display = 'grid';
+            document.getElementById('config_centerColum').style.display = 'grid';
+            document.getElementById('config_rightColumn').style.display = 'grid';
+
+            generateConfigurableMaletines();
+        }
+
+        function generateMaletines() {
+            clearArray(maletines)
+            const maletinesDiv = document.getElementById('maletines');
+            maletinesDiv.innerHTML = '';
+            maletinesDiv.style.display = 'grid';
+            document.getElementById('controls').style.display = 'block';
+            shuffleArray(valores);
+
+            for (let i = 0; i <= maletinesLeft - 1; i++) {
+                const maletin = document.createElement('div');
+                let maletinId = i + 1;
+                maletin.id = `maletin-${maletinId}`
+                maletin.classList.add('maletin', 'closed')
+                maletin.innerHTML = `<span>${maletinId}</span>`;
+                maletin.onclick = () => maletinClicked(i);
+                maletines.push({ id: maletinId, value: valores[i % valores.length] });
+                maletinesDiv.appendChild(maletin);
+            }
+        }
+
+        function generateConfigurableMaletines() {
+            clearArray(maletines)
+            const maletinesDiv = document.getElementById('config_maletines');
+            maletinesDiv.innerHTML = '';
+            maletinesDiv.style.display = 'grid';
+            document.getElementById('config_controls').style.display = 'block';
+
+            for (let i = 0; i <= maletinesLeft - 1; i++) {
+                const maletin = document.createElement('div');
+                let maletinId = i + 1;
+                maletin.id = `config_maletin-${maletinId}`
+                maletin.classList.add('maletin', 'closed')
+                maletin.innerHTML = `<span>${maletinId}</span>`;
+                maletin.onclick = async () => await configureMaletin(i);
+                maletines.push({ id: maletinId, value: valores[i % valores.length] });
+                maletinesDiv.appendChild(maletin);
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function clearArray(array) {
+            while (array.length > 0) {
+                array.pop();
+            }
+        }
+
+        async function configureMaletin(maletinIndex) {
+            const createMaletin = (maletinIndex, value) => {
+                return { maletinIndex, id: (maletinIndex + 1), value: parseFloat(value) };
+            };
+
+            const { value: premio } = await Swal.fire({
+                html: `<p style="color: #fff;">Escoge el valor para este Maletín<br>(Si escoges un valor ya existente, se remplazará)</p>`,
+                input: "select",
+                background: '#1e1e1e',
+                inputOptions: {
+                    "0.1": "0.1",
+                    "0.5": "0.5",
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    "10": "10",
+                    "11": "11",
+                    "12": "12",
+                    "13": "13",
+                    "14": "14",
+                    "15": "15",
+                    "16": "16",
+                    "18": "18",
+                    "20": "20",
+                    "25": "25",
+                    "30": "30",
+                    "40": "40",
+                    "50": "50",
+                    "75": "75",
+                    "100": "100",
+                },
+                inputPlaceholder: "Premio por este Maletín",
+                showCancelButton: true,
+                backdrop: ` rgba(0,0,0,0)`,
+                inputValidator: (value) => {
+                    return new Promise((resolve) => {
+                        resolve();
+                    });
+                }
+            });
+
+            if (premio) {
+                let duplicatedMaletins = document.getElementsByClassName(`config_maletin-value-${premio}`);
+
+                if (duplicatedMaletins.length > 0) {
+                    Swal.fire({
+                        html: `<p style="color: #fff;">Ya existe un maletin con ese valor, quieres remplazarlo?</p>`,
+                        background: '#1e1e1e',
+                        confirmButtonText: "Si, Remplazar",
+                        focusConfirm: false,
+                        showDenyButton: true,
+                        denyButtonText: "No, cancelar",
+                        width: '24em',
+                        customClass: {
+                            popup: 'swal-popup',
+                        },
+                        backdrop: ` rgba(0,0,0,0)`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            for (let i = 0; i < duplicatedMaletins.length; i++) {
+                                let duplicatedMaletinIndex = parseFloat(duplicatedMaletins[i].id.replace("config_maletin-", ""));
+                                let prevIndex = customMaletines.findIndex(element => element.maletinIndex === duplicatedMaletinIndex - 1);
+
+                                duplicatedMaletins[i].innerHTML = `<span>${duplicatedMaletinIndex}</span>`;
+
+                                duplicatedMaletins[i].classList.remove("pre-confirm-selected");
+
+                                duplicatedMaletins[i].classList.remove(`config_maletin-value-${premio}`);
+                                if (prevIndex !== -1) {
+                                    customMaletines.splice(prevIndex, 1);
+                                }
+                            }
+
+                            let maletindDoc = document.getElementById(`config_maletin-${maletinIndex + 1}`);
+                            if (maletindDoc) {
+                                maletindDoc.innerHTML = `<span>${maletinIndex + 1} - $ ${premio}</span>`;
+
+                                maletindDoc.classList.add(`config_maletin-value-${premio}`);
+                                maletindDoc.classList.add("pre-confirm-selected");
+
+                                customMaletines.push(createMaletin(maletinIndex, premio));
+
+                            }
+                        }
+                    });
+                } else {
+                    let maletindDoc = document.getElementById(`config_maletin-${maletinIndex + 1}`);
+                    if (maletindDoc) {
+                        maletindDoc.innerHTML = `<span>${maletinIndex + 1} - $ ${premio}</span>`;
+
+                        maletindDoc.classList.add(`config_maletin-value-${premio}`);
+                        maletindDoc.classList.add("pre-confirm-selected");
+
+                        customMaletines.push(createMaletin(maletinIndex, premio));
+
+                        updateConfigTable(maletinIndex)
+                    }
+                }
+            }
+        }
+
+        function maletinClicked(maletinIndex) {
+            if (selectedMaletin) {
+                if ((selectedMaletin.id - 1) !== maletinIndex) {
+                    if (preConfirmedMaletin && (preConfirmedMaletin.id - 1) === maletinIndex) {
+                        openMaletin(maletinIndex);
+                    } else if (preConfirmedMaletin && (preConfirmedMaletin.id - 1) !== maletinIndex) {
+                        unConfirmMaletin();
+                        preConfirmMaletin(maletinIndex);
+                    } else {
+                        preConfirmMaletin(maletinIndex);
+                    }
+                } else {
+                    if (maletinesLeft === 1) {
+                        openMaletin(maletinIndex);
+                    }
+                }
+            } else {
+                selectMaletin(maletinIndex);
+            }
+        }
+
+        function preConfirmMaletin(maletinIndex) {
+            let allMaletins = document.getElementsByClassName("maletin");
+            if (allMaletins[maletinIndex].classList.contains("opened")) return;
+            allMaletins[maletinIndex].classList.add("pre-confirm-selected");
+            preConfirmedMaletin = maletines[maletinIndex];
+        }
+
+        function unConfirmMaletin() {
+            let allMaletins = document.getElementsByClassName("maletin");
+            if (preConfirmedMaletin) {
+                allMaletins[preConfirmedMaletin.id - 1].classList.remove("pre-confirm-selected");
+            }
+            preConfirmedMaletin = null;
+        }
+
+        function selectMaletin(maletinIndex) {
+            showConfirmAlert('Seleccionar', 'Escoger Otro', () => {
+                let allMaletins = document.getElementsByClassName("maletin")
+                allMaletins[maletinIndex].classList.add("selected")
+                selectedMaletin = maletines[maletinIndex];
+            })
+        }
+
+        function openMaletin(maletinIndex) {
+            const maletinOpened = maletines[maletinIndex];
+            const maletinElement = document.getElementById(`maletin-${maletinOpened.id}`);
+            if (maletinElement.classList.contains("opened")) return;
+            maletinElement.classList.remove("pre-confirm-selected");
+            const maletinText = maletinElement.querySelector('span');
+
+            maletinText.classList.add('hidden');
+
+            setTimeout(() => {
+                maletinText.classList.remove('hidden');
+                maletinText.textContent = `$${maletinOpened.value}`;
+                maletinesLeft--;
+                updateTable(maletinIndex)
+            }, 500);
+
+            if (selectedMaletin && selectedMaletin.id - 1 === maletinIndex) {
+                maletinElement.classList.remove('closed');
+                maletinElement.classList.remove('selected');
+                maletinElement.classList.add("selected-opened");
+            } else {
+                maletinElement.classList.remove('closed');
+                maletinElement.classList.add('opened');
+            }
+        }
+
+        function updateTable(maletinIndex) {
+            const maletinOpened = maletines[maletinIndex];
+            const TableDiv = document.getElementById(`table-value-${maletinOpened.value}`);
+            if (maletinesLeft === 0) {
+                TableDiv.classList.add("table-value-class-won")
+            } else {
+                TableDiv.classList.add("table-value-class-found")
+            }
+        }
+
+        function updateConfigTable(maletinIndex) {
+            let prevIndex = customMaletines.findIndex(element => element.maletinIndex === maletinIndex);
+            const TableDiv = document.getElementById(`config_table-value-${customMaletines[prevIndex].value}`);
+
+            TableDiv.classList.toggle("table-value-class-found")
+        }
+
+        function changeMaletin() {
+            if (maletinesLeft === 0) return;
+            if (maletinesLeft === 1) return;
+            showConfirmAlert("Si, Cambiar", "No Cambiar", () => {
+                let selectedList = document.getElementsByClassName("selected")
+                if (selectedMaletin && selectedList) {
+                    selectedList[0].classList.remove("selected")
+                    selectedMaletin = null;
+                }
+
+                unConfirmMaletin()
+            })
+        }
+
+        function offerFairDeal() {
+            let allClosedMaletins = document.getElementsByClassName("closed")
+
+            let suma = 0;
+            let promedio = 0;
+            if (allClosedMaletins.length < 26 && allClosedMaletins.length > 20) suma = -50;
+            if (allClosedMaletins.length !== 26) {
+                for (let i = 0; i < allClosedMaletins.length; i++) {
+                    let numId = (parseInt(allClosedMaletins[i].id.replace("maletin-", "")) - 1)
+                    suma = suma + maletines[numId].value;
+                }
+            }
+
+            promedio = Math.floor((suma / allClosedMaletins.length) - ((suma / allClosedMaletins.length) * (1 / 5)))
+            if (isNaN(promedio)) promedio = 0;
+            if (allClosedMaletins.length === 1) {
+                let numId = (parseInt(allClosedMaletins[0].id.replace("maletin-", "")) - 1)
+                promedio = maletines[numId].value;
+            }
+
+            showDealAlert('Trato Justo', promedio, () => { })
+        }
+
+        function offerCustomDeal() {
+            const offerAmount = document.getElementById('customOfferAmount').value;
+
+            showDealAlert('Oferta', offerAmount, () => { })
+        }
+
+
+        function showDealAlert(title, deal, callback) {
+            Swal.fire({
+                icon: 'question',
+                html: `<h3>${title}</h3><br>Te Ofrezco${isNaN(deal) ? `` : ` $`} ${deal}`,
+                background: '#1e1e1e',
+                confirmButtonText: "Acepto Micfortuna",
+                focusConfirm: false,
+                showDenyButton: true,
+                denyButtonText: "Niego Micfortuna",
+                customClass: {
+                    popup: 'swal-popup',
+                },
+                backdrop: ` rgba(0,0,0,0)`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    callback();
+                }
+            });
+        }
+
+        function showConfirmAlert(confirmButtonText, cancelButtonText, callback) {
+            Swal.fire({
+                html: '<h3>¿Estás Seguro?</h3>',
+                background: '#1e1e1e',
+                confirmButtonText: confirmButtonText,
+                focusConfirm: false,
+                showDenyButton: true,
+                denyButtonText: cancelButtonText,
+                width: '24em',
+                customClass: {
+                    popup: 'swal-popup',
+                },
+                backdrop: ` rgba(0,0,0,0)`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    callback();
+                }
+            });
+        }
+    </script>
+
+    <script>
+        async function guardarMaletines() {
+            const response = await fetch('/.netlify/functions/saveMaletines', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ maletines: customMaletines }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert(`Maletines guardados con éxito. Seed: ${data.seed}`);
+            } else {
+                alert(`Error al guardar: ${data.error}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
