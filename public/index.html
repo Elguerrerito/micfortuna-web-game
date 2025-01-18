@@ -16,10 +16,16 @@
     <h1 id="mainTitle">MICFORTUNA</h1>
 
     <div id="mainMenu">
-        <!-- <p>Introduce el nombre del invitado:</p>
-        <input type="text" id="invitado" placeholder="Invitado"> -->
-        <button class="btn" onclick="startGame()">Iniciar Juego</button>
-        <button class="btn" onclick="startGameSeedConfig()">Confirgurar Maletines</button>
+
+        <div>
+            <button onclick="cargarMaletines()">Cargar Maletines</button>
+        </div>
+        <div>
+            <button class="btn" onclick="startGame()">Iniciar Juego</button>
+        </div>
+        <div>
+            <button class="btn" onclick="startGameSeedConfig()">Confirgurar Maletines</button>
+        </div>
     </div>
 
     <div id="game" hidden>
@@ -251,8 +257,6 @@
         var maletines = [];
         var valores = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 25, 30, 40, 50, 75, 100];
 
-        //let invitado = '';
-
         let preConfirmedMaletin = null;
         let selectedMaletin = null;
         let maletinesLeft = 26;
@@ -305,18 +309,6 @@
         }
 
         function startGame() {
-            /*invitado = document.getElementById('invitado').value;
-            if (!invitado) {
-                Swal.fire(
-                    {
-                        title: 'Error',
-                        text: 'Por favor, introduce el nombre del invitado.',
-                        icon: "error",
-                        backdrop: ` rgba(0,0,0,0)`
-                    }
-                );
-                return;
-            }*/
 
             document.getElementById('mainMenu').hidden = true;
             document.getElementById('mainTitle').hidden = true;
@@ -705,6 +697,35 @@
                 alert(`Maletines guardados con éxito. Seed: ${data.seed}`);
             } else {
                 alert(`Error al guardar: ${data.error}`);
+            }
+        }
+
+        async function cargarMaletines() {
+            const seed = prompt("Introduce la seed para cargar los maletines:");
+            if (!seed) return alert("Seed es requerida para cargar los maletines.");
+
+            try {
+                const response = await fetch(`/.netlify/functions/getMaletinesBySeed?seed=${seed}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    const { maletines } = data;
+
+                    maletines.forEach(({ maletin_index, premio }) => {
+                        const maletinElement = document.getElementById(`config_maletin-${maletin_index + 1}`);
+                        if (maletinElement) {
+                            maletinElement.textContent = `Premio: ${premio}`;
+                            maletinElement.classList.add(`config_maletin-value-${premio}`);
+                        }
+                    });
+
+                    alert("Maletines cargados con éxito.");
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+            } catch (error) {
+                console.error("Error al cargar los maletines:", error);
+                alert("Hubo un error al cargar los maletines.");
             }
         }
     </script>

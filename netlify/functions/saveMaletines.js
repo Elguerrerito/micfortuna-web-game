@@ -16,10 +16,24 @@ exports.handler = async (event) => {
     try {
         const { maletines } = JSON.parse(event.body);
 
-        if (!Array.isArray(maletines) || maletines.length === 0) {
+        if (!Array.isArray(maletines)) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: 'Datos inválidos' }),
+            };
+        }
+
+        if (Array.isArray(maletines) || maletines.length === 0) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'No asisgnaste valores a ningun maletín' }),
+            };
+        }
+
+        if (Array.isArray(maletines) || maletines.length < 26) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'No asisgnaste valores a todos los maletines' }),
             };
         }
 
