@@ -272,10 +272,10 @@
             document.getElementById('game').hidden = true;
             document.getElementById('game').style.display = "hidden";
 
-            maletines = [];
-            valores = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 25, 30, 40, 50, 75, 100];
             clearArray(maletines)
             clearArray(valores)
+            maletines = [];
+            valores = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 25, 30, 40, 50, 75, 100];
 
             preConfirmedMaletin = null;
             selectedMaletin = null;
@@ -353,6 +353,8 @@
                 maletines.push({ id: maletinId, value: premio });
                 maletinesDiv.appendChild(maletin);
             });
+
+            maletinesLeft = maletines.length;
         }
 
         function startGameSeedConfig() {
@@ -395,6 +397,8 @@
                 maletines.push({ id: maletinId, value: valores[i % valores.length] });
                 maletinesDiv.appendChild(maletin);
             }
+
+            maletinesLeft = maletines.length;
         }
 
         function generateConfigurableMaletines() {
@@ -414,6 +418,8 @@
                 maletines.push({ id: maletinId, value: valores[i % valores.length] });
                 maletinesDiv.appendChild(maletin);
             }
+
+            maletinesLeft = maletines.length;
         }
 
         function shuffleArray(array) {
