@@ -18,7 +18,7 @@
     <div id="mainMenu">
 
         <div>
-            <button onclick="cargarMaletines()">Cargar Maletines</button>
+            <button class="btn" onclick="cargarMaletines()">Cargar Maletines</button>
         </div>
         <div>
             <button class="btn" onclick="startGame()">Iniciar Juego</button>
@@ -700,6 +700,8 @@
             }
         }
 
+        let loadedMaletins = [];
+
         async function cargarMaletines() {
             const seed = prompt("Introduce la seed para cargar los maletines:");
             if (!seed) return alert("Seed es requerida para cargar los maletines.");
@@ -711,13 +713,14 @@
                 if (response.ok) {
                     const { maletines } = data;
 
-                    maletines.forEach(({ maletin_index, premio }) => {
+                    loadedMaletins.push(...maletines)
+                    /*maletines.forEach(({ maletin_index, premio }) => {
                         const maletinElement = document.getElementById(`config_maletin-${maletin_index + 1}`);
                         if (maletinElement) {
                             maletinElement.textContent = `Premio: ${premio}`;
                             maletinElement.classList.add(`config_maletin-value-${premio}`);
                         }
-                    });
+                    });*/
 
                     alert("Maletines cargados con éxito.");
                 } else {
