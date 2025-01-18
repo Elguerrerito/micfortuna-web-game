@@ -1,7 +1,8 @@
+require('dotenv').config()
 const { createClient } = require('@supabase/supabase-js');
 
 const supabaseUrl = 'https://your-supabase-url.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwZnloaG92ZGduaXpia3ZleGN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxODExOTEsImV4cCI6MjA1Mjc1NzE5MX0.JoazWq3j63c7Yvlk6c77HkvfMh0FXdLyy-mptUM9G3Y'; // Reemplaza con tu API key
+const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 exports.handler = async (event) => {
