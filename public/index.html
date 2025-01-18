@@ -329,10 +329,10 @@
             document.getElementById('config_centerColum').style.display = 'none';
             document.getElementById('config_rightColumn').style.display = 'none';
 
-            if (loadedMaletins && loadedMaletins.length === 26) {
+            generateMaletines()
 
-            } else {
-                generateMaletines();
+            if (loadedMaletins /*&& loadedMaletins.length === 26*/) {
+                generateSavedMaletines(loadedMaletins)
             }
         }
 
